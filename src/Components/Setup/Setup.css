@@ -1,0 +1,99 @@
+.Setup{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+}
+
+.setup-header{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    font-size: 60px;
+    opacity: 0;
+    animation-name: welcome;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+     animation-delay: .7s;
+     border: 1px solid;
+     width: 100%;
+     height: 20%;
+     transition:  all 2s;
+}
+
+.setup-container{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid;
+            width: 100%;
+            height: 80%;
+}
+.setup-box{
+    border: 1px solid;
+    height: 500px;
+    width: 800px;
+}
+.box-header{
+    border: 1px solid;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-form{
+    border: 1px solid;
+        width: 100%;
+        height: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.setup-container form{
+    border: 1px solid;
+    height: 100%;
+}
+
+
+
+
+@keyframes welcome {
+    0%{
+        opacity: 0;
+        position: absolute;
+        margin: 0;
+    }
+    20%{
+        opacity: 1;
+        font-size: 100px;
+        position: absolute;
+        margin: 0;
+    }
+    40%{
+        opacity: 1;
+        position: absolute;
+        margin: 0;
+    }
+    60%{
+        opacity: 1;
+        position: absolute;
+        margin: 0;
+    }
+    80%{
+        opacity: 1;
+        position: absolute;
+        margin: 0;
+        
+    }
+    100%{
+        opacity: 1;
+        margin-top: -700px;
+        position: absolute;
+    }
+}
