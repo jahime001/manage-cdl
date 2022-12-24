@@ -44,7 +44,7 @@ export default function Signup() {
                 <button type='submit'>Sign Up</button>
             </form>
             <p>Already have an account? 
-                <Link to='/'>Sign In</Link>
+                <Link to='/signin'>Sign In</Link>
             </p>
                 </div>
             </div>
