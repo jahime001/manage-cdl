@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
-import { UserAuth } from '../../context/AuthContext'
+import { UserAuth } from '../../../../context/AuthContext'
 
 export default function Home() {
     const {user, logout} = UserAuth()
