@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../../context/AuthContext'
-
+import './Signin.css'
+import landing from '../Signup/landing.jpeg'
 
 export default function Signin() {
      const [email, setEmail] = useState()
@@ -23,22 +24,31 @@ export default function Signin() {
     }
   return (
     <div className='signin'>
-        <div>
-            <h1>Sign In</h1>
-            <form onSubmit={handleSubmit}>
-                <input type='email' 
+        <div className='signin-floater'>
+            <div className='signup-left' style={{ backgroundImage: `url(${landing})`, backgroundPosition: "center", objectFit: "fill"}}>
+
+            </div>
+            <div className='signin-right'>
+                <div className='signin-form'>
+                    <h1>Sign In</h1>
+            <form onSubmit={handleSubmit} className='forms'>
+                <input 
+                type='email' 
                 placeholder='Email'
                 onChange={(e) => setEmail(e.target.value)}
                 />
-                <input type='password' 
+                <input 
+                type='password' 
                 placeholder='Password'
                 onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type='submit'>Sign In</button>
+                <button type='submit'>Sign Up</button>
             </form>
             <p>Don't have an account yet? 
-                <Link to='/signup'>Sign Up</Link>
+                <Link to='/signup'>Sign up</Link>
             </p>
+                </div>
+            </div>
         </div>
     </div>
   )
