@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
 import { UserAuth } from '../../../../context/AuthContext'
+import Sidenav from '../Sidenav/Sidenav'
+import './Home.css'
 
 export default function Home() {
     const {user, logout} = UserAuth()
@@ -20,7 +22,6 @@ async function handleLogout(){
     <div className='home'>
          This is my Home
          email: {user && user.email}
-         <button onClick={handleLogout}>Logout</button>
         </div>
   )
 }

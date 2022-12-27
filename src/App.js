@@ -16,7 +16,7 @@ function App() {
         <Route path='/' element={<Landing/>} />
         <Route path='/signup' element={<Signup/>} />
         <Route path='/signin' element={<Signin/>} />
-        {/* <Route path='/dashboard/home' element={<ProtectedRoute><Home/></ProtectedRoute>} /> */}
+        {/* <Route path='/home' element={<Home/>} /> */}
         <Route path='/setup' element={<Setup/>} />
         <Route path='/dashboard' element={<Dashboard/>} />
       </Routes>
