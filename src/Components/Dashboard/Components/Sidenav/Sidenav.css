@@ -1,14 +1,13 @@
 .Sidenav{
     height: 100%;
     /* border: 1px solid; */
-    width: 60px;
     color:  white;
     background-color: #4459e8;
     /* border-top-right-radius: 20px;
     border-bottom-right-radius: 20px; */
     /* border-radius: 20px; */
     transition: all 0.5s;
-    position: absolute;
+    /* position: fixed; */
 }
 
 .nav-header{

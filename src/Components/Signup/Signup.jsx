@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Signup.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../../context/AuthContext'
@@ -9,18 +9,30 @@ export default function Signup() {
     const [error, setError] = useState()
     const navigate = useNavigate()
     const {createUser} = UserAuth()
+    const [uid, setUid] = useState()
+    const [loading, setLoading] = useState(false)
 
     async function handleSubmit(e) {
         e.preventDefault()
         setError('')
         try {
             await createUser(email, password)
-            navigate('/home')
+                navigate('/setup')  
         } catch (error) {
             setError(error.message)
             console.log(error.message)
         }
     }
+    // useEffect(() => {
+    //     function toSetup(){
+    //         if(!uid){
+    //             setLoading(true)
+    //          }else{
+    //             navigate('/setup/' + `${uid}`)
+    //         }
+    //     }
+    //     toSetup()
+    // }, [uid])
   return (
     <div className='signup'>
         <div className='signup-floater'>
@@ -41,7 +53,7 @@ export default function Signup() {
                 placeholder='Password'
                 onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type='submit'>Sign Up</button>
+                <button type='submit'>{(loading == false)? 'Loading': 'Sign Up'}</button>
             </form>
             <p>Already have an account? 
                 <Link to='/signin'>Sign In</Link>
