@@ -27,7 +27,6 @@ export default function Dashboard() {
   return (
     <div className='Dashboard'>
       <AuthContextProvider>
-        <employeeRoutes />
         <Sidenav/>
         <Routes>
         <Route path='/' element={<Home userInfo={userInfo}/>} />

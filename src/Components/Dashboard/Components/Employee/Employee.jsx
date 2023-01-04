@@ -4,6 +4,7 @@ import { db } from '../../../../firebase'
 import { doc, setDoc, addDoc, collection, getDoc } from "firebase/firestore"
 import employeeRoutes from '../../Routes/employeeRoutes'
 import { Alert } from 'react-bootstrap'
+import { UserAuth } from '../../../../context/AuthContext'
 
 export default function Employee() {
     const [firstName, setFirstName] = useState('')
@@ -22,6 +23,7 @@ export default function Employee() {
     width: '500px'
   }
 }
+const {user} = UserAuth()
 const [isOpen, setIsOpen] = useState(false)
 
 function openModal() {
@@ -43,12 +45,15 @@ function closeModal() {
             lastName,
             position
         }
-
+        const pk = user.uid
+        console.log(pk)
         try {
-            await employeeRoutes.addEmp(newEmp)
+            await employeeRoutes.addEmp(pk, newEmp)
             setMessage({error: false, msg: "New Employee Registered!"})
+            console.log('sent')
         } catch (error) {
             setMessage({error: true, msg: error.message})
+            console.log(error.message)
         }
 
      setFirstName('')

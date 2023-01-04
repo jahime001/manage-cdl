@@ -2,33 +2,36 @@ import { db } from "../../../firebase"
 import {getDoc, collection, getDocs, addDoc, updateDoc, doc, deleteDoc } from "firebase/firestore"
 import { UserAuth } from "../../../context/AuthContext"
 import { AuthContextProvider } from "../../../context/AuthContext"
+import { useContext, useState } from "react"
 
-const {user} = UserAuth()
 
-
-const empCollection = collection(db, 'users', user.uid, 'employees' )
+// const {user} = UserAuth
+// const empCollection = collection(db, 'users', user.uid, 'employees' )
     
 
     class EmployeeRoutes {
-        addEmp = (newEmp) => {
+        addEmp = (pk, newEmp) => {
+            const empCollection = collection(db, 'users', pk, 'employees' )
             return addDoc(empCollection, newEmp)
         }
 
-        updateEmp= (id, updatedEmp) => {
-            const empDoc = doc(db,'users', user.uid, 'employees', id)
+        getAllEmp = (pk) => {
+            const empCollection = collection(db, 'users', pk, 'employees' )
+            return getDocs(empCollection)
+        }
+
+        getEmp = (pk, id) => {
+            const empDoc = doc(db, 'users', pk, 'employees', id)
+            return getDoc(empDoc)
+        }
+        updateEmp= (pk, id, updatedEmp) => {
+            const empDoc = doc(db,'users', pk, 'employees', id)
             return updateDoc(empDoc, updatedEmp)
 
         }
-        deleteEmp = (id) => {
-            const empDoc = doc(db, 'users', user.uid, 'employees', id)
-            return updateDoc(empDoc)
-        }
-        getAllEmp = () => {
-            return getDocs(empCollection)
-        }
-        getBook = (id) => {
-            const empDoc = doc(db, 'users', user.uid, 'employees', id)
-            return getDocs(empDoc)
+        deleteEmp = (pk, id) => {
+            const empDoc = doc(db, 'users', pk, 'employees', id)
+            return deleteDoc(empDoc)
         }
     }
 
