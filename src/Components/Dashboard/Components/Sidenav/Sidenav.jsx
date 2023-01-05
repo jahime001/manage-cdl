@@ -26,7 +26,7 @@ export default function Sidenav() {
     async function handleLogout(){
     try {
         await logout()
-        navigate('/')
+        navigate('/signin')
         console.log('you logged out')
     } catch (error) {
         console.log(error.message)

@@ -1,0 +1,149 @@
+.alert{
+    height: 100px;
+    width: 100px;
+}
+
+.employee{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.employee-card{
+    width: 300px;
+    height: 300px;
+    border: 1px solid;
+}
+
+
+
+.employee-upper{
+    height: 30%;
+    width: 100%;
+}
+
+
+.employee-lower{
+    width: 100%;
+    height: 70%;
+}
+
+.employee-card > * {
+    width: 100%;
+}
+.employee-card-top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+}
+.employee-card-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+}
+.employee-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+}
+.pfp{
+    height: 100px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 50%;
+}
+
+.employee-form{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.employee-form-header{
+    height: 10%;
+    width: 100%;
+    text-align: center;
+}
+.employee-form > *{
+    display: flex;
+    justify-content: space-between;
+    height: 10%;
+}
+
+.field-div > * {
+    width: 45%;
+    height: 100%;
+}
+
+.register-button{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.register-button:hover{
+    cursor: pointer;
+}
+.mini-nav{
+    border-bottom: 1px solid;
+    width: 90%;
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.emp-list-container{
+    /* border: 1px solid; */
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+.employee-row{
+    border-bottom: 1px solid;
+        width: 90%;
+        height: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+.column{
+    width: 25%;
+    display: flex;
+    justify-content: start;
+}
+
+.edit-button{
+    height: 50%;
+    width: 60px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+}
+
+.edit-button:hover{
+    cursor: pointer;
+}
+.actions {
+    height: 100%;
+    width: 130;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

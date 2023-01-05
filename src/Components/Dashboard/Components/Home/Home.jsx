@@ -19,6 +19,7 @@ export default function Home({userInfo}) {
 // }
 console.log(userInfo)
 
+
   return (
     <div className='home'>
         <div className='home-header'>

@@ -2,7 +2,8 @@
     height: 100%;
     /* border: 1px solid; */
     color:  white;
-    background-color: #4459e8;
+    background: rgb(68, 89, 232);
+        background: linear-gradient(180deg, rgba(68, 89, 232, 1) 0%, rgba(151, 0, 255, 1) 100%);
     /* border-top-right-radius: 20px;
     border-bottom-right-radius: 20px; */
     /* border-radius: 20px; */
