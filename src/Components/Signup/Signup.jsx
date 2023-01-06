@@ -53,7 +53,7 @@ export default function Signup() {
                 placeholder='Password'
                 onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type='submit'>{(loading == false)? 'Loading': 'Sign Up'}</button>
+                <button type='submit'>Sign Up</button>
             </form>
             <p>Already have an account? 
                 <Link to='/signin'>Sign In</Link>

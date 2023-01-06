@@ -5,6 +5,9 @@
     height: 100vh;
     width: 100%;
     flex-direction: column;
+    font-family: 'Noto Sans', sans-serif;
+    background: rgb(253, 29, 29);
+        background: linear-gradient(155deg, rgba(253, 29, 29, 1) 2%, rgba(252, 176, 69, 1) 100%);
 }
 
 .setup-header{
@@ -18,7 +21,6 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
      animation-delay: .7s;
-     border: 1px solid;
      width: 100%;
      height: 20%;
      transition:  all 2s;
@@ -28,12 +30,12 @@
     display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid;
+
             width: 100%;
             height: 80%;
 }
 .setup-box{
-    border: 1px solid;
+
     height: 550px;
     width: 700px;
     
@@ -87,6 +89,7 @@
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
             animation-delay: 3.8s;
+            
 }
 .setup-button{
     height: 15%;

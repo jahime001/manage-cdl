@@ -2,8 +2,8 @@
     height: 100%;
     /* border: 1px solid; */
     color:  white;
-    background: rgb(68, 89, 232);
-        background: linear-gradient(180deg, rgba(68, 89, 232, 1) 0%, rgba(151, 0, 255, 1) 100%);
+    background: rgb(253, 29, 29);
+        background: linear-gradient(155deg, rgba(253, 29, 29, 1) 2%, rgba(252, 176, 69, 1) 100%);
     /* border-top-right-radius: 20px;
     border-bottom-right-radius: 20px; */
     /* border-radius: 20px; */
@@ -41,7 +41,7 @@
 }
 .upper-nav>*:hover {
     cursor: pointer;
-    background-color: #3c50cb;
+    background-color: rgba(252, 176, 69, .3);
 }
 
 .icon{
@@ -72,7 +72,7 @@
 
 .lower-nav>*:hover {
     cursor: pointer;
-        background-color: #3c50cb;
+        background-color: rgba(252, 176, 69, .3);
 }
 
 .nav-icon:hover{
@@ -96,5 +96,5 @@
 }
 
 .active{
-    background-color: #3c50cb;
+    background-color: rgba(252, 176, 69, .3);
 }

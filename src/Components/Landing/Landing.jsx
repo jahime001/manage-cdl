@@ -7,6 +7,8 @@ export default function Landing() {
     <div className='Landing'>
         <Nav />
         <div className='landing-one'>
+            <h1>Manage CDL</h1>
+            <p>The tool to help manage your company</p>
             
         </div>
     </div>

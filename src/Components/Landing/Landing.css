@@ -1,9 +1,25 @@
 .Landing{
     height: auto;
     width: 100%;
+    font-family: 'Noto Sans', sans-serif;
 }
 .landing-one{
     width: 100%;
     height: 100vh;
-    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: rgb(253, 29, 29);
+        background: linear-gradient(155deg, rgba(253, 29, 29, 1) 2%, rgba(252, 176, 69, 1) 100%);
+}
+
+.landing-one h1{
+    font-size: 150px;
+}
+
+.landing-one p {
+    font-size: 50px;
+    margin-top: -125px
 }

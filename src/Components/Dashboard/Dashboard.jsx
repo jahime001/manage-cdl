@@ -9,6 +9,7 @@ import { UserAuth } from '../../context/AuthContext';
 import { doc, getDoc, collection} from 'firebase/firestore'
 import { db } from '../../firebase';
 import employeeRoutes from './Routes/employeeRoutes'
+import Vans from './Components/Vans/Vans'
 export default function Dashboard() {
    const [userInfo, setUserInfo] = useState()
     const {user, logout} = UserAuth()
@@ -31,6 +32,7 @@ export default function Dashboard() {
         <Routes>
         <Route path='/' element={<Home userInfo={userInfo}/>} />
         <Route path='/employees' element={<Employee/>} />
+        <Route path='/vans' element={<Vans/>} />
       </Routes>
       </AuthContextProvider>
     </div>
