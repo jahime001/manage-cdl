@@ -1,25 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 .Landing{
     height: auto;
     width: 100%;
     font-family: 'Noto Sans', sans-serif;
+    position: relative;
+    min-height: 50vh;
+    color: white;
+    
 }
-.landing-one{
+
+section{
+    position: relative;
+    min-height: 200px;
+    height: 80vh;
+    z-index: -1;
+}
+.one{
+    background: #0f59b3;
+    /* background: linear-gradient(155deg, #98c1d9 2%, #98c1d9 100%); */
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.wave .shape-fill {
+    fill: #FFFFFF;
+}
+
+.front-page{
+    border: 1px solid;
+    height: 75vh;
+    display: flex;
+}
+.front-page >* {
+    width: 50%;
+    height: 100%;
+    border: 1px solid blue;
+}
+.title-textbox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.title-textbox > *{
+    margin-left: 20%;
+    text-align: left;
+}
+
+.title-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    /* border: 1px solid; */
+    width: 60%;
+    height: auto;
+    /* height: 300px; */
+}
+.title-text h1{
+    font-size: 60px;
+    font-family: 'Inter', sans-serif;
+    color: #ee6c4d;
+    margin: 0;
+}
+
+.title-text h2{
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.title-text p {
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 0;
+}
+
+.title-imagebox{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    background: rgb(253, 29, 29);
-        background: linear-gradient(155deg, rgba(253, 29, 29, 1) 2%, rgba(252, 176, 69, 1) 100%);
+}
+.title-imagebox img{
+    height: 407px;
+    width: 570px;
+}
+.join-now{
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    margin-top: 20px;
 }
 
-.landing-one h1{
-    font-size: 150px;
-}
-
-.landing-one p {
-    font-size: 50px;
-    margin-top: -125px
+.join-now:hover{
+    cursor: pointer;
 }

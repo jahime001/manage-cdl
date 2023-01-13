@@ -6,7 +6,7 @@ export default function Nav() {
   return (
     <div className='Nav'>
         <div className='logo'>
-            <h1>Manage Cdl</h1>
+            {/* <h1>Manage Cdl</h1> */}
         </div>
             <div className='action'>
              <Link to="/signin" className='signin-button'>Sign In</Link>

@@ -3,8 +3,8 @@ import {getDoc, collection, getDocs, addDoc, updateDoc, doc, deleteDoc } from "f
 import { UserAuth } from "../../../context/AuthContext"
 import { AuthContextProvider } from "../../../context/AuthContext"
 import { useContext, useState } from "react"
-
-
+import { getStorage, ref, uploadBytes } from "firebase/storage"
+const storage = getStorage()
 // const {user} = UserAuth
 // const empCollection = collection(db, 'users', user.uid, 'employees' )
     
@@ -32,6 +32,10 @@ import { useContext, useState } from "react"
         deleteEmp = (pk, id) => {
             const empDoc = doc(db, 'users', pk, 'employees', id)
             return deleteDoc(empDoc)
+        }
+        addEmpPfp = (pk, id, imageUpload) => {
+            const pfpRef = ref(storage, `${pk}/pfp/${id}`)
+            uploadBytes(pfpRef, imageUpload)
         }
     }
 

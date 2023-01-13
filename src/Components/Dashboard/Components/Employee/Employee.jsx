@@ -21,6 +21,7 @@ export default function Employee() {
     const [state, setState] = useState('')
     const [pay, setPay] = useState('')
     const [employees, SetEmployees] = useState()
+    const [imageUpload, setImageUpload] = useState()
     const customStyles = {
   content: {
     top: '50%',
