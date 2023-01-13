@@ -5,6 +5,7 @@ const UserContext = createContext()
 
 export const AuthContextProvider = ({children}) => {
     const [user, setUser] = useState({})
+    const [pending, setPending] = useState(true)
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth,email,password)
     }
@@ -19,11 +20,16 @@ const signIn = (email, password) => {
             const unsub = onAuthStateChanged(auth, (currentUser) => {
                 console.log(user)
                 setUser(currentUser)
+                setPending(false)
             })
             return () => {
                 unsub()
             }
     }, [])
+
+    if (pending) {
+        return <>Loading...</>
+    }
     return (
         <UserContext.Provider value={{createUser, user, logout, signIn}}>
             {children}
