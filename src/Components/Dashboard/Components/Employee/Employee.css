@@ -151,10 +151,18 @@
 }
 
 .emp-card {
-  border: 1px solid;
+  /* border: 1px solid; */
   width: 300px;
   height: 300px;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+  align-items: center;
+}
+.emp-card > *{
+    /* border: 1px solid; */
 }
 .emp-card-upper{
     height: 50%;
@@ -162,6 +170,35 @@
     display:  flex;
     align-items: center;
     justify-content: center;
+}
+.emp-card-pfp{
+    border: 1px solid;
+    height: 80%;
+    width: 40%;
+    border-radius: 100%;
+}
+.emp-card-lower{
+    height: 35%;
+}
+.emp-card-lower h4{
+    margin: 0;
+    font-size: 20px;
+}
+.emp-card-lower p{
+    margin: 0;
+}
+.emp-card-more{
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #1c2229;
+    font-size: 30px;
+    width: 50%;
+}
+.emp-card-more:hover{
+    cursor: pointer;
 }
 
 @media screen and (min-width: 1900px) {

@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AiOutlineEdit, AiOutlineDelete, AiOutlinePlus } from "react-icons/ai";
 import Results from "./Results";
+import InfoBar from "./InfoBar";
 
 export default function Employee() {
   const [firstName, setFirstName] = useState("");
@@ -23,6 +24,7 @@ export default function Employee() {
   const [pay, setPay] = useState("");
   const [employees, SetEmployees] = useState();
   const [imageUpload, setImageUpload] = useState();
+  const [barOpen, setBarOpen] = useState(false);
   const customStyles = {
     content: {
       top: "50%",

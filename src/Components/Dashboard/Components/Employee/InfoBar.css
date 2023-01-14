@@ -1,0 +1,14 @@
+.infobar{
+    position: fixed;
+    height: 100vh;
+    width: 0px;
+    z-index: 1;
+    background-color: white;
+    right: 0;
+    transition: .5s;
+    top: 0;
+}
+
+.bar-active{
+    width: 400px;
+}

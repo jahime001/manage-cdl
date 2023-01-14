@@ -1,25 +1,30 @@
 import React, { useState, useEffect } from "react";
 import "./Employee.css";
 import ReactPaginate from "react-paginate";
+import InfoBar from "./InfoBar";
 
 export default function Results({ employees }) {
-    const items = employees
-    const [itemsPerPage, setItemsPerPage] = useState(6)
-    useEffect(() => {
-        function handleResize() {
-        const wide = window.matchMedia("(min-width: 1900px)");
-        let wideScreen = wide.matches;
-        if (wideScreen) {
-          setItemsPerPage(12)
-          console.log(itemsPerPage)
-        } else {
-            setItemsPerPage(6)
-            console.log(itemsPerPage);
-        }
-        } 
-        window.addEventListener("resize", handleResize)
-}, [])
-    
+  const items = employees;
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [barOpen, setBarOpen] = useState(false);
+  useEffect(() => {
+    function handleResize() {
+      const wide = window.matchMedia("(min-width: 1900px)");
+      let wideScreen = wide.matches;
+      if (wideScreen) {
+        setItemsPerPage(12);
+        console.log(itemsPerPage);
+      } else {
+        setItemsPerPage(6);
+        console.log(itemsPerPage);
+      }
+    }
+    window.addEventListener("resize", handleResize);
+  }, []);
+
+  function openBar() {
+    setBarOpen(!barOpen)
+  }
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   // Here we use item offsets; we could also use page offsets
@@ -48,11 +53,17 @@ export default function Results({ employees }) {
         <div className="results-container">
           {currentItems.map((emp) => {
             return (
-                <div className="emp-card">
-                    <div className="emp-card-upper">
-                        <div></div>
-                    </div>
-                <h1>{emp.firstName}</h1>
+              <div className="emp-card">
+                <div className="emp-card-upper">
+                  <div className="emp-card-pfp"></div>
+                </div>
+                <div className="emp-card-lower">
+                  <h4>
+                    {emp.firstName} {emp.lastName}
+                  </h4>
+                  <p>{emp.position}</p>
+                </div>
+                <div className="emp-card-more" onClick={openBar}>More</div>
               </div>
             );
           })}
@@ -78,6 +89,7 @@ export default function Results({ employees }) {
         containerClassName="pagination"
         activeClassName="active"
       />
+      <InfoBar barOpen={barOpen} />
     </div>
   );
 }
