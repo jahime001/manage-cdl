@@ -1,13 +1,15 @@
 .Sidenav{
     height: 100%;
     /* border: 1px solid; */
-    color:  white;
-    background: #1c2229;
+    color:  rgb(255, 255, 255);
+    /* background: #ffffff; */
+    background-color: #377dff;
     /* border-top-right-radius: 20px;
     border-bottom-right-radius: 20px; */
     /* border-radius: 20px; */
     transition: all 0.5s;
     /* position: fixed; */
+    font-weight: 300;
 }
 
 .nav-header{
@@ -15,8 +17,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
-
+    width: 60px;
+    /* border: 1px solid; */
 }
 .upper-nav{
     /* border: 1px solid; */
@@ -36,11 +38,11 @@
     align-items: center;
     justify-content: start;
     border-radius: 10px;
-    color: inherit;
+    /* color: inherit; */
 }
 .upper-nav>*:hover {
     cursor: pointer;
-    background-color: rgba(252, 176, 69, .3);
+    background-color: #266ff8;
 }
 
 .icon{
@@ -51,7 +53,6 @@
 }
 
 .lower-nav{
-    /* border: 1px solid; */
     height: 60%;
     display: flex;
     flex-direction: column;
@@ -71,7 +72,7 @@
 
 .lower-nav>*:hover {
     cursor: pointer;
-        background-color: rgba(252, 176, 69, .3);
+     background-color: #266ff8;
 }
 
 .nav-icon:hover{
@@ -95,5 +96,6 @@
 }
 
 .active{
-    background-color: rgba(252, 176, 69, .3);
+    color: #ffffff;
+    background-color: #266ff8; 
 }

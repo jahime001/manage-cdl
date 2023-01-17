@@ -23,7 +23,6 @@ export default function Employee() {
   const [state, setState] = useState("");
   const [pay, setPay] = useState("");
   const [employees, SetEmployees] = useState();
-  const [imageUpload, setImageUpload] = useState();
   const [barOpen, setBarOpen] = useState(false);
   const customStyles = {
     content: {
@@ -40,7 +39,7 @@ export default function Employee() {
       alignItems: "center",
     },
   };
-  const { user } = UserAuth();
+  const { user, refresh } = UserAuth();
   const [isOpen, setIsOpen] = useState(false);
   const pk = user.uid;
 
@@ -57,7 +56,7 @@ export default function Employee() {
       SetEmployees(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     }
     getEmp();
-  }, [firstName]);
+  }, [firstName, refresh]);
 
   async function handleSubmit(e) {
     e.preventDefault();

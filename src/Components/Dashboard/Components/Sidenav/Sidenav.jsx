@@ -22,6 +22,13 @@ export default function Sidenav() {
             setIsOpen(false)
         }
     }
+    function closeNav() {
+      if (isOpen == false) {
+          return;
+      } else {
+        setIsOpen(false);
+      }
+    }
 
     async function handleLogout(){
     try {
@@ -34,19 +41,19 @@ export default function Sidenav() {
 }
 
   return (
-    <div className='Sidenav' style={{width: isOpen ? "15%" : "60px"}}>
+    <div className='Sidenav' style={{width: isOpen ? "20%" : "60px"}}>
         <div className='nav-header'>
             {(isOpen == false)? <RxHamburgerMenu className='nav-icon icon' onClick={handleNav}/>: <AiOutlineClose className='nav-icon icon' onClick={handleNav}/>}
             <p style={{display: isOpen ? "" : "none"}}></p>
         </div>
         <div className='upper-nav'>
-            <NavLink to='/dashboard'><div className='nav-item' activeClassName="active"><RxDashboard className='dash-icon icon'/> <p style={{display: isOpen ? "block" : "none"}}>Dashboard</p></div></NavLink>
-            {/* <NavLink to='/dashboard/schedule'><div className='nav-item' activeClassName="active"><AiOutlineSchedule className='schedule-icon icon'/><p style={{display: isOpen ? "block" : "none"}}>Schedule</p></div></NavLink> */}
-            <NavLink to='/dashboard/employees'><div className='nav-item' activeClassName="active"><HiOutlineUsers className='user-icon icon'/><p style={{display: isOpen ? "block" : "none"}}>Employees</p></div></NavLink>
-            {/* <NavLink to='/dashboard/vans'><div className='nav-item'  activeClassName="active"><RiBus2Line className='bus-icon icon'/> <p style={{display: isOpen ? "block" : "none"}}>Vans</p></div></NavLink> */}
+            <NavLink to='/dashboard/'><div className='nav-item' activeClassName="active" onClick={closeNav}><RxDashboard className='dash-icon icon'/> <p style={{display: isOpen ? "block" : "none"}}>Dashboard</p></div></NavLink>
+            <NavLink to='/dashboard/schedule'><div className='nav-item' activeClassName="active" onClick={closeNav}><AiOutlineSchedule className='schedule-icon icon'/><p style={{display: isOpen ? "block" : "none"}}>Schedule</p></div></NavLink>
+            <NavLink to='/dashboard/employees'><div className='nav-item' activeClassName="active" onClick={closeNav}><HiOutlineUsers className='user-icon icon'/><p style={{display: isOpen ? "block" : "none"}}>Employees</p></div></NavLink>
+            <NavLink to='/dashboard/vans'><div className='nav-item'  activeClassName="active" onClick={closeNav}><RiBus2Line className='bus-icon icon'/> <p style={{display: isOpen ? "block" : "none"}}>Vans</p></div></NavLink>
         </div>
         <div className='lower-nav'>
-            <div><p style={{display: isOpen ? "" : "none"}}>Settings</p><CiSettings className='dash-icon icon'/></div>
+            <div><p style={{display: isOpen ? "" : "none"}}>Settings</p><CiSettings className='dash-icon icon' onClick={closeNav}/></div>
             <div><p style={{display: isOpen ? "" : "none"}}>Log Out</p><FiLogOut className='dash-icon icon' onClick={handleLogout}/></div>
         </div>
     </div>

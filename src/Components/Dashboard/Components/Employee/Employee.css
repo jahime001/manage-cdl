@@ -12,6 +12,7 @@
   justify-content: center;
   flex-direction: column;
   font-family: "Sofia Sans", sans-serif;
+  background-color: #ffffff;
 }
 
 .employee-header {
@@ -40,7 +41,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: #1c2229;
+  background-color: #377dff;
   border-radius: 10px;
 }
 .newemp-btn:hover {
@@ -87,7 +88,7 @@
 }
 
 .register-button {
-  background-color: #1c2229;
+  background-color: #377dff;;
   color: white;
   display: flex;
   justify-content: center;
@@ -141,12 +142,12 @@
 }
 
 .pagination .page-link:hover {
-  background-color: #1c2229;
+  background-color: #377dff;
   color: white;
 }
 
 .pagination .active {
-  background-color: #1c2229;
+  background-color: #377dff;
   color: white;
 }
 
@@ -160,6 +161,11 @@
   justify-content: space-evenly;
   overflow: hidden;
   align-items: center;
+}
+.emp-card:hover{
+    /* border: 1px solid #377dff; */
+    /* box-shadow: 0px 0px 10px #377dff; */
+    cursor: pointer;
 }
 .emp-card > *{
     /* border: 1px solid; */
@@ -177,25 +183,37 @@
     width: 40%;
     border-radius: 100%;
 }
+.emp-card-pfp > img{
+    
+}
+.pfp{
+  height: 100%;
+    display: inline-block;
+    /* width: 100%; */
+    background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
 .emp-card-lower{
-    height: 35%;
+    height: 5%;
 }
 .emp-card-lower h4{
     margin: 0;
     font-size: 20px;
+    font-weight: 200;
 }
 .emp-card-lower p{
     margin: 0;
 }
 .emp-card-more{
-    height: 15%;
+    height: 35%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    background-color: #1c2229;
+    /* background-color: #377dff; */
     font-size: 30px;
-    width: 50%;
+    width: 100%;
 }
 .emp-card-more:hover{
     cursor: pointer;
@@ -207,4 +225,14 @@
     grid-template-columns: repeat(6, 1fr);
     
   }
+}
+
+.emp-card-more > * {
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #000000;
+}
+
+.emp-card-more > *:hover{
+  color: #377dff;
 }
