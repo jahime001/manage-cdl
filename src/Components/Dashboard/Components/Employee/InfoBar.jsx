@@ -3,7 +3,7 @@ import "./InfoBar.css";
 import employeeRoutes from "../../Routes/employeeRoutes";
 import { UserAuth } from "../../../../context/AuthContext";
 import { MdOutlineAddAPhoto } from "react-icons/md";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineDelete } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import { RefreshUpdate } from "../../../../context/AuthContext";
 import Modal from "react-modal";
@@ -23,6 +23,7 @@ export default function InfoBar({ barOpen, currentEmp, setBarOpen }) {
   const [file, setFile] = useState();
   const [emp, setEmp] = useState();
   const [isOpen, setIsOpen] = useState(false);
+  const [deleteOpen, setDeleteOpen] = useState(false);
   const { user, refresh } = UserAuth();
   const [percentage, setPercentage] = useState()
   const handleRefresh = RefreshUpdate();
@@ -41,15 +42,41 @@ const customStyles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    zIndex: "2"
+    zIndex: "2",
   },
 };
+  const customStyles2 = {
+    content: {
+      top: "50%",
+      left: "35%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      height: "100px",
+      width: "200px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      zIndex: "2",
+      borderRadius: "20px",
+      backgorundColor: "#F7F7F7",
+    },
+  };
   function openModal() {
+    setDeleteOpen(false);
     setIsOpen(true);
   }
   function closeModal() {
     setIsOpen(false);
   }
+  function openDeleteModal() {
+     setIsOpen(false);
+     setDeleteOpen(true);
+   }
+   function closeDeleteModal() {
+     setDeleteOpen(false);
+   }
   useEffect(() => {
     async function getEmp() {
       const data = await employeeRoutes.getEmp(pk, currentEmp);
@@ -60,6 +87,8 @@ const customStyles = {
  
   function closeBar(){
     setBarOpen(false)
+    setDeleteOpen(false);
+    setIsOpen(false);
   }
 
     function uploadImage(e) {
@@ -139,6 +168,7 @@ const customStyles = {
         <div className="infobar-conatainer">
           <div className="infobar-header">
             <AiOutlineClose className="close-infobar" onClick={closeBar} />
+            <AiOutlineDelete className="delete-emp-btn" onClick={openDeleteModal} />
             <div
               className="infobar-img"
               style={{
@@ -212,6 +242,17 @@ const customStyles = {
           </div>
         </div>
       </Modal>
+      <Modal isOpen={deleteOpen} onRequestClose={closeDeleteModal} style={customStyles2}>
+        <div className="delete-container">
+          <div className="delete-header">
+            <h5>Are you sure you want to delete this Employee?</h5>
+          </div>
+          <div className="delete-buttons">
+            <div className="no-delete"><p>No</p></div>
+            <div className="yes-delete"><p>Yes</p></div>
+          </div>
+        </div>
+       </Modal>
     </div>
   );
 }
