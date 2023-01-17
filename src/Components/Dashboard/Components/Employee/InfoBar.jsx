@@ -3,6 +3,9 @@ import "./InfoBar.css";
 import employeeRoutes from "../../Routes/employeeRoutes";
 import { UserAuth } from "../../../../context/AuthContext";
 import { MdOutlineAddAPhoto } from "react-icons/md";
+import { AiOutlineClose } from "react-icons/ai";
+import { ToastContainer, toast } from "react-toastify";
+import { RefreshUpdate } from "../../../../context/AuthContext";
 import Modal from "react-modal";
 import {
   getStorage,
@@ -16,12 +19,13 @@ import ProgressBar  from "react-bootstrap/ProgressBar";
 
 
 
-export default function InfoBar({ barOpen, currentEmp }) {
+export default function InfoBar({ barOpen, currentEmp, setBarOpen }) {
   const [file, setFile] = useState();
   const [emp, setEmp] = useState();
   const [isOpen, setIsOpen] = useState(false);
-  const { user } = UserAuth();
+  const { user, refresh } = UserAuth();
   const [percentage, setPercentage] = useState()
+  const handleRefresh = RefreshUpdate();
   const pk = user.uid;
   // const storage = getStorage();
 const customStyles = {
@@ -52,10 +56,14 @@ const customStyles = {
       setEmp(data.data());
     }
     getEmp();
-  }, [currentEmp]);
-  console.log(emp)
-  useEffect(() => {
-    function uploadImage() {
+  }, [currentEmp, refresh]);
+ 
+  function closeBar(){
+    setBarOpen(false)
+  }
+
+    function uploadImage(e) {
+        e.preventDefault()
       const storageRef = ref(storage, `${pk}/profile/${currentEmp}`);
 
       const uploadTask = uploadBytesResumable(storageRef, file);
@@ -81,12 +89,24 @@ const customStyles = {
               console.log("Upload is running");
               break;
           }
+         
         },
         (error) => {
           // Handle unsuccessful uploads
         },
         () => {
-          // Handle successful uploads on complete
+          handleRefresh();
+            toast.success("Profile picture changed!", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+          closeModal();
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             employeeRoutes.updateEmp(pk, currentEmp, {
@@ -97,15 +117,28 @@ const customStyles = {
         }
       );
     }
-    uploadImage()
-  }, [file]);
+
+  
 
 
   return (
     <div className={`infobar ${barOpen && "bar-active"}`}>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       {emp && (
         <div className="infobar-conatainer">
           <div className="infobar-header">
+            <AiOutlineClose className="close-infobar" onClick={closeBar} />
             <div
               className="infobar-img"
               style={{
@@ -123,8 +156,33 @@ const customStyles = {
             <h1>
               {emp.firstName} {emp.lastName}
             </h1>
+            <p>{emp.position}</p>
           </div>
-          <div></div>
+          <div className="infobar-details">
+            <div className="detail-item">
+              <h3>Email</h3>
+              <p>{emp.email}</p>
+            </div>
+            <div className="detail-item">
+              <h3>Phone</h3>
+              <p>
+                ({emp.phone.slice(0, 3)}) {emp.phone.slice(3, 6)}-
+                {emp.phone.slice(6, 10)}
+              </p>
+            </div>
+            <div className="detail-item">
+              <h3>Address</h3>
+              <p>{emp.address}</p>
+            </div>
+            <div className="detail-item">
+              <h3>City</h3>
+              <p>{emp.city}</p>
+            </div>
+            <div className="detail-item">
+              <h3>State</h3>
+              <p>{emp.state}</p>
+            </div>
+          </div>
           <div></div>
         </div>
       )}
@@ -140,7 +198,7 @@ const customStyles = {
                 setFile(e.target.files[0]);
               }}
             />
-            {/* <button onClick={uploadImage}>Upload Image</button> */}
+            <button onClick={uploadImage}>Upload Image</button>
             <ProgressBar
               animated
               striped

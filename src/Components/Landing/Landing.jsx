@@ -25,11 +25,11 @@ export default function Landing() {
                   {/* Style will be inherited from the parent element */}
                   <Typewriter
                     words={[
-                      "Employees",
-                      "Vans",
-                      "Pupils",
-                      "Invoices",
-                      "Company",
+                      "Employees.",
+                      "Vans.",
+                      "Pupils.",
+                      "Invoices.",
+                      "Company.",
                     ]}
                     loop={100}
                     cursor

@@ -12,13 +12,13 @@ import { RefreshUpdate } from "../../../../context/AuthContext";
 
 export default function Results({ employees }) {
   const { user, refresh } = UserAuth();
-  const handleRefresh = RefreshUpdate()
-    const pk = user.uid;
+  const handleRefresh = RefreshUpdate();
+  const pk = user.uid;
   const items = employees;
   const [itemsPerPage, setItemsPerPage] = useState(6);
   const [barOpen, setBarOpen] = useState(false);
   const [currentEmp, setCurrentEmp] = useState();
-  const [empId, setEmpId] = useState()
+  const [empId, setEmpId] = useState();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [position, setPosition] = useState("Driver");
@@ -43,26 +43,25 @@ export default function Results({ employees }) {
       alignItems: "center",
     },
   };
-   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   function openModal(id) {
-    setEmpId(id)
-    const ce = employees.find(emp => emp.id == id)
+    setEmpId(id);
+    const ce = employees.find((emp) => emp.id == id);
     setFirstName(ce.firstName);
     setLastName(ce.lastName);
-    setEmail(ce.email)
-    setPhone(ce.phone)
-    setAddress(ce.address)
-    setCity(ce.city)
-    setState(ce.state)
-    setPay(ce.pay)
-    setPosition(ce.position)
-     setIsOpen(true);
-     
-   }
-   function closeModal() {
-     setIsOpen(false);
-   }
-  
+    setEmail(ce.email);
+    setPhone(ce.phone);
+    setAddress(ce.address);
+    setCity(ce.city);
+    setState(ce.state);
+    setPay(ce.pay);
+    setPosition(ce.position);
+    setIsOpen(true);
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   async function updateEmp(e) {
     e.preventDefault();
     if (
@@ -127,11 +126,9 @@ export default function Results({ employees }) {
       });
       console.log(error.message);
     }
-    handleRefresh()
-
+    handleRefresh();
   }
-  
-  
+
   useEffect(() => {
     function handleResize() {
       const wide = window.matchMedia("(min-width: 1900px)");
@@ -145,14 +142,14 @@ export default function Results({ employees }) {
       }
     }
     window.addEventListener("resize", handleResize);
-    handleResize()
+    handleResize();
   }, []);
   // console.log(employees);
-  
+
   function openBar(id) {
-    setBarOpen(!barOpen);
-    setCurrentEmp(id)
-    console.log(currentEmp)
+    setBarOpen(true);
+    setCurrentEmp(id);
+    console.log(currentEmp);
     // console.log(id)
   }
   const [currentItems, setCurrentItems] = useState(null);
@@ -165,7 +162,6 @@ export default function Results({ employees }) {
     setCurrentItems(items.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(items.length / itemsPerPage));
   }, [itemOffset, itemsPerPage, , items]);
-
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
@@ -196,12 +192,15 @@ export default function Results({ employees }) {
               <div className="emp-card">
                 <div className="emp-card-upper">
                   {emp.img ? (
-                    <div className="emp-card-pfp" style={{
-                      backgroundImage: `url(${emp.img})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat'
-                    }}>
+                    <div
+                      className="emp-card-pfp"
+                      style={{
+                        backgroundImage: `url(${emp.img})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                      }}
+                    >
                       {/* <img className="pfp" src={emp.img}></img> */}
                     </div>
                   ) : (
@@ -249,7 +248,11 @@ export default function Results({ employees }) {
         containerClassName="pagination"
         activeClassName="active"
       />
-      <InfoBar barOpen={barOpen} currentEmp={currentEmp} />
+      <InfoBar
+        barOpen={barOpen}
+        currentEmp={currentEmp}
+        setBarOpen={setBarOpen}
+      />
       <Modal isOpen={isOpen} onRequestClose={closeModal} style={customStyles}>
         <div className="employee-form-header">
           <h1>Edit Employee</h1>
