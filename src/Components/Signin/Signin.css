@@ -76,3 +76,8 @@
 .forms button:hover {
     cursor: pointer;
 }
+
+.forms button:disabled{
+    pointer-events: none;
+  opacity: 0.2;
+}
