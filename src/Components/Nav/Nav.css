@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@500&display=swap");
 .Nav{
     /* border: 1px solid; */
     position: fixed;
@@ -6,6 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: "Kumbh Sans", sans-serif;
 }
 
 .nav-links{
@@ -40,7 +42,12 @@
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: #377dff;
+    background: rgb(38, 227, 194);
+  background: linear-gradient(
+    155deg,
+    rgba(38, 227, 194, 1) 0%,
+    rgba(69, 160, 245, 1) 76%
+  );
     text-decoration: none;
     border-radius: 5px;
 }
@@ -53,4 +60,9 @@
 
 .link{
     color: black;
+}
+
+.logo{
+    color: #fcfcfc;
+    margin-left: 60px;
 }

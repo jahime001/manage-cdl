@@ -147,7 +147,9 @@ const customStyles = {
       );
     }
 
-  
+  function handleEmpDelete() {
+    employeeRoutes.deleteEmp(pk,)
+  }
 
 
   return (
@@ -249,7 +251,7 @@ const customStyles = {
           </div>
           <div className="delete-buttons">
             <div className="no-delete"><p>No</p></div>
-            <div className="yes-delete"><p>Yes</p></div>
+            <div className="yes-delete" onClick={handleEmpDelete}><p>Yes</p></div>
           </div>
         </div>
        </Modal>

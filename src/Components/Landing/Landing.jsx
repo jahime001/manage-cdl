@@ -40,7 +40,19 @@ const customStyles = {
   return (
     <div className="Landing">
       <Nav />
-      <Modal isOpen={isOpen} onRequestClose={closeModal} style={customStyles}>
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      {/* <Modal isOpen={isOpen} onRequestClose={closeModal} style={customStyles}>
         <div>
           <h1>Welcome</h1>
           <h4>
@@ -58,7 +70,7 @@ const customStyles = {
           <p>Email: testaccount@gmail.com</p>
           <p>Pass: testaccount23</p>
         </div>
-      </Modal>
+      </Modal> */}
       <section className="one">
         <div className="front-page">
           <div className="title-textbox">
@@ -72,15 +84,15 @@ const customStyles = {
               >
                 Manage your
                 <br />{" "}
-                <span style={{ color: "#377dff", fontWeight: "bold" }}>
+                <span style={{ fontWeight: "bold" }} className="typewriter">
                   {/* Style will be inherited from the parent element */}
                   <Typewriter
                     words={[
-                      "Employees.",
-                      "Vans.",
-                      "Pupils.",
-                      "Invoices.",
-                      "Company.",
+                      "Employees",
+                      "Vans",
+                      "Pupils",
+                      "Invoices",
+                      "Company",
                     ]}
                     loop={100}
                     cursor
@@ -99,13 +111,21 @@ const customStyles = {
                 more.
               </p>
             </div>
-            <div className="join-now">Join Now For Free!</div>
+            <button className="join-now">Join Now</button>
           </div>
           <div className="title-imagebox">
             <div className="empMock-container">
               <img src={empMockup} alt="" className="empMock" />
             </div>
           </div>
+        </div>
+      </section>
+      <section className="two">
+        <div className="sectiontwo-upper">
+          <h2>What we provide</h2>
+        </div>
+        <div className="sectiontwo-lower">
+          
         </div>
       </section>
     </div>
