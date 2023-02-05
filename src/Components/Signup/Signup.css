@@ -55,12 +55,12 @@
     text-align: start;
 }
 
-.form input{
+/* .form input{
     height: 15%;
     font-size: 20px;
     opacity: .5;
     border: transparent;
-}
+} */
 
 .form button{
     height:  15%;

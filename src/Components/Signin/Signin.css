@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@500&display=swap");
+
 .signin {
     width: 100%;
     height: 100vh;
@@ -5,6 +7,8 @@
     align-items: center;
     justify-content: center;
     background-color: grey;
+    color: white;
+    font-family: "Kumbh Sans", sans-serif;
 }
 
 .signin-floater {
@@ -20,16 +24,22 @@
 .signin-right {
     height: 100%;
     width: 50%;
-    background-color: rgb(255, 255, 255);
+    background-color: #0f0f0f;
     display: flex;
     align-items: center;
     justify-content: center;
+   box-shadow: -15px 3px 60px 19px rgba(0,0,0,0.75);
 }
 
 .signin-left {
     height: 100%;
     width: 50%;
-    /* background-color: rgb(209, 178, 178); */
+    background: rgb(38, 227, 194);
+  background: linear-gradient(
+    155deg,
+    rgba(38, 227, 194, 1) 0%,
+    rgba(69, 160, 245, 1) 76%
+  );
 }
 
 .signin-form {
@@ -49,6 +59,7 @@
     /* border: 1px solid; */
     height: 60%;
     justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -56,21 +67,41 @@
     text-align: start;
 }
 
-.forms input {
-    height: 15%;
-    font-size: 20px;
-    opacity: .5;
-    border: transparent;
+
+.signin-form-input{
+    /* border: 1px solid; */
+    width: 80%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
+.signin-form-input input{
+    height: 70%;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, .7);
+    background-color: #0f0f0f;
+    color: white;
+    font-size: 20px;
+}
+
 
 .forms button {
     height: 15%;
     bottom: 0px;
-    width: 100%;
-    background-color: rgb(0, 0, 0);
+    width: 80%;
+    background: rgb(38, 227, 194);
+  background: linear-gradient(
+    155deg,
+    rgba(38, 227, 194, 1) 0%,
+    rgba(69, 160, 245, 1) 76%
+  );
     color: white;
     font-size: 20px;
     border-radius: 10px;
+    border: none;
 }
 
 .forms button:hover {
@@ -80,4 +111,16 @@
 .forms button:disabled{
     pointer-events: none;
   opacity: 0.2;
+}
+hr{
+    width: 80%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px rgb(0, 0, 0) inset !important;
+    -webkit-text-fill-color: rgb(255, 255, 255) !important;
+    font-size: 20px;
 }

@@ -46,40 +46,32 @@ export default function Signin() {
         pauseOnHover
         theme="light"
       />
-      <div className="signin-floater">
-        <div
-          className="signup-left"
-          style={{
-            backgroundImage: `url(${landing})`,
-            backgroundPosition: "center",
-            objectFit: "fill",
-          }}
-        ></div>
-        <div className="signin-right">
-          <div className="signin-form">
-            <h1>Sign In</h1>
-            <form onSubmit={handleSubmit} className="forms">
-              <input
-                type="email"
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <button type="submit" disabled={isDisabled}>
-                Sign In
-              </button>
-            </form>
-            <p>
-              Don't have an account yet?
-              <Link to="/signup">Sign up</Link>
-            </p>
-          </div>
+      {/* <div className="signin-floater"> */}
+      <div className="signin-left"></div>
+      <div className="signin-right">
+        <div className="signin-form">
+          <h1>Log In</h1>
+          <form onSubmit={handleSubmit} className="forms">
+            <div className="signin-form-input">
+              Email
+              <input type="email" onChange={(e) => setEmail(e.target.value)} />
+            </div>
+            <div className="signin-form-input">
+              Password
+              <input type="password" onChange={(e) => setPassword(e.target.value)} />
+            </div>
+            <button type="submit" disabled={isDisabled}>
+              Sign In
+            </button>
+          </form>
+          <hr />
+          <p>
+            Don't have an account yet?
+            <Link to="/signup">Sign up</Link>
+          </p>
         </div>
       </div>
+      {/* </div> */}
     </div>
   );
 }
