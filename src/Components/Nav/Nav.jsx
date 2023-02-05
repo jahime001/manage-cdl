@@ -9,7 +9,7 @@ export default function Nav() {
             <h1>7DNinja</h1>
         </div>
             <div className='action'>
-             <Link to="/signin" className='signin-button'>Sign In</Link>
+             <Link to="/signin" className='signin-button'>Log In</Link>
              <Link  to="/signup" className='signup-button'>Sign Up</Link>
             </div>
     </div>

@@ -8,6 +8,8 @@
     justify-content: space-between;
     align-items: center;
     font-family: "Kumbh Sans", sans-serif;
+    background-color: #0f0f0f;
+    z-index: 1;
 }
 
 .nav-links{
@@ -55,8 +57,14 @@
 
 
 .signin-button {
-    color: black;
+    color: rgb(255, 255, 255);
 }
+/* .signin-button:hover {
+    cursor: pointer;
+}
+.signup-button:hover {
+    cursor: pointer;
+} */
 
 .link{
     color: black;

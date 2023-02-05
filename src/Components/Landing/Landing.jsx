@@ -2,56 +2,46 @@ import React, { useState, useEffect } from "react";
 import Nav from "../Nav/Nav";
 import "./Landing.css";
 import { Typewriter } from "react-simple-typewriter";
-import empMockup from './empMock.png'
+import empMockup from "./empMock.png";
 import Modal from "react-modal";
 import ChangeLogs from "../ChangeLogs/ChangeLogs";
 import { Link } from "react-router-dom";
+import { SlPeople, SlDocs, SlChart } from "react-icons/sl";
 
 export default function Landing() {
   const [isOpen, setIsOpen] = useState(false);
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    height: "400px",
-    width: "600px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    zIndex: "2",
-  },
-};
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      height: "400px",
+      width: "600px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      zIndex: "2",
+    },
+  };
   useEffect(() => {
     setTimeout(() => {
       setIsOpen(true);
     }, 2000);
   }, []);
-   function openModal() {
-     setIsOpen(true);
-   }
-   function closeModal() {
-     setIsOpen(false);
-   }
+  function openModal() {
+    setIsOpen(true);
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   return (
     <div className="Landing">
       <Nav />
-      <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+
       {/* <Modal isOpen={isOpen} onRequestClose={closeModal} style={customStyles}>
         <div>
           <h1>Welcome</h1>
@@ -125,9 +115,81 @@ const customStyles = {
           <h2>What we provide</h2>
         </div>
         <div className="sectiontwo-lower">
-          
+          <div className="sectiontwo-floater-card">
+            <div className="sectiontwo-floater-card-upper">
+              {/* card one */}
+              <SlPeople className="sectiontwo-floater-icon" />
+            </div>
+            <div className="sectiontwo-floater-card-mid">
+              <h4>Track Employees</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                voluptatum nam numquam harum nesciunt accusamus cumque, quasi
+                quidem itaque doloribus.
+              </p>
+            </div>
+            <div className="sectiontwo-floater-card-lowerr"></div>
+          </div>
+          <div className="sectiontwo-floater-card">
+            {/* card two */}
+            <div className="sectiontwo-floater-card-upper">
+              <SlDocs className="sectiontwo-floater-icon" />
+            </div>
+            <div className="sectiontwo-floater-card-mid">
+              <h4>Save Docs</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                voluptatum nam numquam harum nesciunt accusamus cumque, quasi
+                quidem itaque doloribus.
+              </p>
+            </div>
+            <div className="sectiontwo-floater-card-lowerr"></div>
+          </div>
+          {/* card three */}
+          <div className="sectiontwo-floater-card">
+            <div className="sectiontwo-floater-card-upper">
+              <SlChart className="sectiontwo-floater-icon" />
+            </div>
+            <div className="sectiontwo-floater-card-mid">
+              <h4>Monitor Your Company</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                voluptatum nam numquam harum nesciunt accusamus cumque, quasi
+                quidem itaque doloribus.
+              </p>
+            </div>
+            <div className="sectiontwo-floater-card-lowerr"></div>
+          </div>
+          {/* card four */}
+          <div className="sectiontwo-floater-card">
+            <div className="sectiontwo-floater-card-upper">
+              <SlPeople className="sectiontwo-floater-icon" />
+            </div>
+            <div className="sectiontwo-floater-card-mid">
+              <h4>Track Employees</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                voluptatum nam numquam harum nesciunt accusamus cumque, quasi
+                quidem itaque doloribus.
+              </p>
+            </div>
+            <div className="sectiontwo-floater-card-lowerr"></div>
+          </div>
         </div>
       </section>
+                    <section></section>
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
   );
 }

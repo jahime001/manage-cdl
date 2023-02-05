@@ -6,14 +6,14 @@
   font-family: "Kumbh Sans", sans-serif;
   position: relative;
   min-height: 50vh;
-  color: rgb(0, 0, 0);
+  /* color: rgb(0, 0, 0); */
   overflow: hidden;
 }
 
 section {
   position: relative;
   min-height: 200px;
-  z-index: -1;
+  /* z-index: -1; */
   background-color: #0f0f0f;
 }
 .one {
@@ -157,7 +157,7 @@ section {
  display: flex;
  flex-direction: column;
  align-items: center;
- justify-content: center;
+ justify-content: space-between;
  font-family: "Kumbh Sans", sans-serif;
 }
 .two >*{
@@ -174,12 +174,64 @@ section {
     font-size: 30px;
 }
 .sectiontwo-lower{
-    height: 80%;
-    border: 1px solid;
+    height: 60%;
+    /* border: 1px solid; */
     color: #fcfcfc;
-    width: 80%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.sectiontwo-lower > *{
+    height: 90%;
+    /* border: 1px solid; */
+    color: #fcfcfc;
+    width: 20%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #0f1527; */
+}
+.sectiontwo-lower > *:hover{
+    background-color: #202028;
+    box-shadow: 0 0 10px #000000;
+    cursor: pointer;
+}
+.sectiontwo-floater-card-upper{
+  /* border: 1px solid; */
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sectiontwo-floater-card-mid{
+  height: 60%;
+  width: 90%;
+  text-align: left;
+}
+.sectiontwo-floater-card-mid p{
+  opacity: .5;
 }
 
+.sectiontwo-floater-icon{
+  background: rgba(255, 255, 255, 0.2);
+border-radius: 7px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  height: 20px;
+  width: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.sectiontwo-floater-card-lowerr{
+  height: 20%;
+}
 
 
 .circles{
@@ -189,6 +241,7 @@ section {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .circles li{
